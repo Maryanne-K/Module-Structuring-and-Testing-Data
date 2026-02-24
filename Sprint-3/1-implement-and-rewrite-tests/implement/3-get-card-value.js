@@ -23,6 +23,44 @@
 
 function getCardValue(card) {
   // TODO: Implement this function
+  if (card === "A♠" || card === "A♥" || card === "A♦" || card === "A♣") {
+    return 11;
+  }
+  else if (card === "J♠" || card === "J♥" || card === "J♦" || card === "J♣" ||
+           card === "Q♠" || card === "Q♥" || card === "Q♦" || card === "Q♣" ||
+           card === "K♠" || card === "K♥" || card === "K♦" || card === "K♣") {
+    return 10;
+  }
+  else if (card === "2♠" || card === "2♥" || card === "2♦" || card === "2♣") {
+    return 2;
+  }
+  else if (card === "3♠" || card === "3♥" || card === "3♦" || card === "3♣") {
+    return 3;
+  }
+  else if (card === "4♠" || card === "4♥" || card === "4♦" || card === "4♣") {
+    return 4;
+  }
+  else if (card === "5♠" || card === "5♥" || card === "5♦" || card === "5♣") {
+    return 5;
+  }
+  else if (card === "6♠" || card === "6♥" || card === "6♦" || card === "6♣") {
+    return 6;
+  }
+  else if (card === "7♠" || card === "7♥" || card === "7♦" || card === "7♣") {
+    return 7;
+  }
+  else if (card === "8♠" || card === "8♥" || card === "8♦" || card === "8♣") {
+    return 8;
+  }
+  else if (card === "9♠" || card === "9♥" || card === "9♦" || card === "9♣") {
+    return 9;
+  }
+  else if (card === "10♠" || card === "10♥" || card === "10♦" || card === "10♣") {
+    return 10;
+  }
+  else {
+    throw new Error("Invalid card");
+  }
 }
 
 // The line below allows us to load the getCardValue function into tests in other files.
@@ -40,6 +78,9 @@ function assertEquals(actualOutput, targetOutput) {
 // TODO: Write tests to cover all outcomes, including throwing errors for invalid cards.
 // Examples:
 assertEquals(getCardValue("9♠"), 9);
+assertEquals(getCardValue("A♥"), 11);
+assertEquals(getCardValue("J♦"), 10);
+assertEquals(getCardValue("10♣"), 10); 
 
 // Handling invalid cards
 try {
@@ -50,3 +91,7 @@ try {
 } catch (e) {}
 
 // What other invalid card cases can you think of?
+try {
+  getCardValue("1♠");
+console.error("Error was not thrown for invalid card");}
+catch (e) {}
